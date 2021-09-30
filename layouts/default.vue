@@ -1,5 +1,5 @@
 <template>
-    <div>
+  <div class="text-black">
     <Header />
     <Nuxt />
     <Footer />
@@ -11,11 +11,9 @@ import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
 
 export default {
-    name: "default",
-    components: {Footer, Header}
-}
+  name: "default",
+  components: { Footer, Header }
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
