@@ -1,0 +1,62 @@
+<template>
+  <div>
+    <h2 class="text-4xl font-bold mb-6">
+      Registration for Vaccine - {{ theme }}
+    </h2>
+    <p class="text-lg">
+      You will just need your NID card, Phone number and filling up some info
+    </p>
+
+    <div class="flex -mx-6 my-16">
+      <div class="flex-1 px-6">
+        <div class="h-32 flex justify-center items-center">
+          <img class="mx-auto" src="img/promo-1.svg" alt="" />
+        </div>
+        <div
+          class="border-4 w-6 h-6 rounded-full border-green-600 mx-auto mb-4 mt-8 tika-step relative"
+        ></div>
+        <p class="font-bold text-lg">NID</p>
+      </div>
+
+      <div class="flex-1 px-6">
+        <div class="h-32 flex justify-center items-center">
+          <img
+            v-if="theme == 'homepage'"
+            class="mx-auto"
+            src="img/promo-2.svg"
+            alt=""
+          />
+          <img
+            v-if="theme == 'step-1'"
+            class="mx-auto"
+            src="/img/promo-2-disabled.svg"
+            alt=""
+          />
+        </div>
+        <div
+          class="border-4 w-6 h-6 rounded-full border-green-600 mx-auto mb-4 mt-8 tika-step relative"
+        ></div>
+        <p class="font-bold text-lg">Phone</p>
+      </div>
+
+      <div class="flex-1 px-6">
+        <div class="h-32 flex justify-center items-center">
+          <img class="mx-auto" src="img/promo-3.svg" alt="" />
+        </div>
+        <div
+          class="border-4 w-6 h-6 rounded-full border-green-600 mx-auto mb-4 mt-8 tika-step relative"
+        ></div>
+        <p class="font-bold text-lg">Information</p>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "VaccineSteps",
+  props: ["theme"]
+};
+</script>
+
+<style scoped></style>

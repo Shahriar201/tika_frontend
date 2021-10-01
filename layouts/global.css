@@ -13,3 +13,46 @@
 .hero-heading {
   font-size: 144px;
 }
+
+.small-container {
+  max-width: 1000px;
+}
+
+.tika-text-pink {
+  color: #ff3c8e;
+}
+
+.tika-text-primay,
+.nuxt-link-exact-active,
+.menu-items {
+  color: #27ae60;
+}
+
+.tika-step:before,
+.tika-step:after {
+  top: 50%;
+  height: 2px;
+  width: 210px;
+  content: "";
+  background-color: #d6d6d6;
+  position: absolute;
+  margin-top: -1px;
+}
+
+.tika-step:before {
+  right: 20px;
+}
+.tika-step:after {
+  left: 20px;
+}
+
+.flex-1:first-child .tika-step:before,
+.flex-1:last-child .tika-step:after {
+  display: none;
+}
+
+.dots-1 {
+  width: 130px;
+  height: 108px;
+  background-image: url(/img/dots-1.svg);
+}

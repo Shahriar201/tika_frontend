@@ -1,43 +1,45 @@
 <template>
   <div>
     <div class="primary-bg">
-      <div class="container mx-auto py-20">
-        <div class="bg-white mb-20">
+      <div class="container mx-auto pt-20 pb-10">
+        <div class="bg-white">
           <div class="flex items-center">
             <div class="min-w-max">
-              <h2 class="text-2xl font-bold text-black uppercase px-6">TIKA</h2>
+              <h2 class="text-2xl font-bold text-black uppercase px-6">
+                <nuxt-link to="/">TIKA</nuxt-link>
+              </h2>
             </div>
 
             <div class="w-full">
               <ul class="flex justify-center">
                 <li>
-                  <luxt-link class="py-10 px-5 inline-block" to=""
-                    >Home</luxt-link
+                  <nuxt-link class="py-10 px-5 inline-block" to="/"
+                    >Home</nuxt-link
                   >
                 </li>
                 <li>
-                  <luxt-link class="py-10 px-5 inline-block" to=""
-                    >Registration</luxt-link
+                  <nuxt-link class="py-10 px-5 inline-block" to="/registration"
+                    >Registration</nuxt-link
                   >
                 </li>
                 <li>
-                  <luxt-link class="py-10 px-5 inline-block" to=""
-                    >Verity</luxt-link
+                  <nuxt-link class="py-10 px-5 inline-block" to="/verify"
+                    >Verity</nuxt-link
                   >
                 </li>
                 <li>
-                  <luxt-link class="py-10 px-5 inline-block" to=""
-                    >Tika Card</luxt-link
+                  <nuxt-link class="py-10 px-5 inline-block" to="/tika-card"
+                    >Tika Card</nuxt-link
                   >
                 </li>
                 <li>
-                  <luxt-link class="py-10 px-5 inline-block" to=""
-                    >Help</luxt-link
+                  <nuxt-link class="py-10 px-5 inline-block" to="/help"
+                    >Help</nuxt-link
                   >
                 </li>
                 <li>
-                  <luxt-link class="py-10 px-5 inline-block" to=""
-                    >Faqs</luxt-link
+                  <nuxt-link class="py-10 px-5 inline-block" to="/faqs"
+                    >Faqs</nuxt-link
                   >
                 </li>
               </ul>
@@ -52,25 +54,6 @@
                 >
               </div>
             </div>
-          </div>
-        </div>
-
-        <div class="flex items-center">
-          <div class="w-full">
-            <h1
-              class="hero-heading font-bold text-white uppercase leading-none mb-6"
-            >
-              Vaccine
-            </h1>
-            <h2 class="text-7xl font-medium text-white mb-10">Registration</h2>
-            <p class="text-white text-2xl">
-              Complete the registration by verifying your national identity card
-              and mobile number
-            </p>
-          </div>
-
-          <div class="min-w-max">
-            <img src="img/bro.png" alt="" />
           </div>
         </div>
       </div>
