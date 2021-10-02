@@ -16,14 +16,31 @@
 
     <div class="py-20">
       <div class="small-container mx-auto">
-        <VaccineSteps theme="step-1" />
+        <VaccineSteps theme="step_1" />
+
+        <div class="bg-white px-18 py-10 border border-gray-100">
+          <h3>Identity Verification</h3>
+          <p>
+            <label class="tika-label" for="nid">National</label>
+            <input
+              class="tika-input"
+              type="text"
+              placeholder="National Id Card Number"
+            />
+          </p>
+        </div>
       </div>
+    </div>
+
+    <div class="container mx-auto">
+      <ThreeSteps />
     </div>
   </div>
 </template>
 
 <script>
 import VaccineSteps from "../components/VaccineSteps";
+import ThreeSteps from "../components/ThreeSteps";
 export default {
   name: "registration",
   components: { VaccineSteps }
