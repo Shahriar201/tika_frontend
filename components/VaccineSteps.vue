@@ -21,7 +21,7 @@
       <div class="flex-1 px-6">
         <div class="h-32 flex justify-center items-center">
           <img
-            v-if="theme == 'homepage'"
+            v-if="theme == 'homepage' || theme == 'step_2' || theme == 'step_3'"
             class="mx-auto"
             src="/img/promo-2.svg"
             alt=""
@@ -35,7 +35,7 @@
         </div>
         <div
           v-bind:class="
-            theme == 'homepage' || theme == 'step_2'
+            theme == 'homepage' || theme == 'step_2' || theme == 'step_3'
               ? 'border-green-600'
               : 'border-gray-400'
           "
