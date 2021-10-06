@@ -244,7 +244,7 @@
               </p>
             </div>
 
-            <p v-if="diabates == 0" class="mt-6 text-left">
+            <p v-if="diabates" class="mt-6 text-left">
               <button
                 @click.prevent="goToStepThree"
                 class="primary-bg text-2xl text-white px-6 py-2 rounded-2xl"
@@ -252,6 +252,64 @@
                 Submit
               </button>
             </p>
+          </div>
+
+          <div v-if="step == 'step_3'">
+            <h3 class="font-bold text-4xl mb-6 text-center">
+              Phone Verification
+            </h3>
+
+            <div v-if="!smsSent">
+              <p class="mb-6">
+                <label
+                  for="phone"
+                  class="text-lg font-semibold text-black block mb-3 text-left cursor-pointer"
+                  >Phone Number</label
+                >
+                <input
+                  v-model="phone"
+                  type="text"
+                  id="phone"
+                  class="block border bg-gray-100 border-gray-200 p-4 w-full rounded-3xl"
+                  placeholder="Type your phone number"
+                />
+              </p>
+
+              <p class="mt-6 text-left">
+                <button
+                  @click.prevent="sendVerificationSMS"
+                  class="primary-bg text-2xl text-white px-6 py-2 rounded-2xl"
+                >
+                  Send SMS
+                </button>
+              </p>
+            </div>
+
+            <div v-if="smsSent">
+              <p class="mb-6">
+                <label
+                  for="verify_code"
+                  class="text-lg font-semibold text-black block mb-3 text-left cursor-pointer"
+                  >Verification Code</label
+                >
+                <input
+                  v-model="verify_code"
+                  type="text"
+                  id="verify_code"
+                  class="block border bg-gray-100 border-gray-200 p-4 w-full rounded-3xl"
+                  placeholder="Type your verification code"
+                />
+              </p>
+
+              <p class="mt-6 text-left">
+                <button
+                  @click.prevent="verifyCode"
+                  class="primary-bg text-2xl text-white px-6 py-2 rounded-2xl"
+                >
+                  Verify Code
+                </button>
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -289,7 +347,10 @@ export default {
       upazila_id: "",
       center_id: "",
       name: "",
-      diabates: ""
+      diabates: "",
+      phone: "",
+      verify_code: "",
+      smsSent: false
     };
   },
 
@@ -346,7 +407,30 @@ export default {
 
     goToStepThree() {
       this.step = "step_3";
+    },
+
+    sendVerificationSMS() {
+      this.$axios
+        .post("/phone-verify", {
+          phone: this.phone
+        })
+        .then(res => {
+          if (res.data == "pending") {
+            this.smsSent = true;
+          }
+        });
     }
+
+    // verifyCode() {
+    //   this.$axios
+    //     .post("/phone-verify-code", {
+    //       phone: this.phone,
+    //       verify_code: this.verify_code
+    //     })
+    //     .then(res => {
+    //       console.log(res.data);
+    //     });
+    // }
   }
 };
 </script>
